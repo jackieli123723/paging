@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"content="text/html; charset=gb2312"/>
+<title>js对象和jquery对象转换</title>
+ <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+<Style>
+ul li{
+
+ height:40px;
+ line-height:40px;
+ font-size:20px;
+ width:200px;
+}
+
+pre{
+line-height:1; 
+background-color: #eee; 
+font-family: "Lucida Console", Monaco, monospace;
+ padding: .5em; 
+ white-space: pre-wrap;
+ word-wrap: break-word;
+}
+
+.fl{
+float:left;
+width:50%;
+}
+</style>
+<div class="fl">
+<h2>原生js委托方式</h2>
+<ul id="ul">
+	<li>aaaaaaaa</li>
+	<li>bbbbbbbb</li>
+	<li>cccccccc</li>
+</ul>
+ 
+ <pre style="width:80%;">
+ 
+ 
+ window.onload = function(){
+	var oUl = document.getElementById("ul");
+	var aLi = oUl.getElementsByTagName("li");
+
+/*
+这里要用到事件源：event 对象，事件源，不管在哪个事件中，只要你操作的那个元素就是事件源。
+ie：window.event.srcElement
+标准下:event.target
+nodeName:找到元素的标签名
+*/
+	oUl.onmouseover = function(ev){
+		var ev = ev || window.event;
+		var target = ev.target || ev.srcElement;
+		//alert(target.innerHTML);
+		if(target.nodeName.toLowerCase() == "li"){
+		target.style.background = "red";
+		}
+	}
+	oUl.onmouseout = function(ev){
+		var ev = ev || window.event;
+		var target = ev.target || ev.srcElement;
+		//alert(target.innerHTML);
+		if(target.nodeName.toLowerCase() == "li"){
+		target.style.background = "";
+		}
+	}
+}
+ 
+ </pre>
+
+</div>
+
+<div class="fl">
+<h2>jquery委托方式</h2>
+<ul id="ul2">
+	<li>aaaaaaaa</li>
+	<li>bbbbbbbb</li>
+	<li>cccccccc</li>
+</ul>
+
+<pre>
+
+$("#ul2").on("mouseover","li",function(e){		
+ $(e.target).css("background","red")
+			 
+}).on("mouseout","li",function(e){		
+ $(e.target).css("background","")
+		 
+})
+</pre>
+	
+	
+</div>
+<script type="text/javascript">
+window.onload = function(){
+	var oUl = document.getElementById("ul");
+	var aLi = oUl.getElementsByTagName("li");
+
+/*
+这里要用到事件源：event 对象，事件源，不管在哪个事件中，只要你操作的那个元素就是事件源。
+ie：window.event.srcElement
+标准下:event.target
+nodeName:找到元素的标签名
+*/
+	oUl.onmouseover = function(ev){
+		var ev = ev || window.event;
+		var target = ev.target || ev.srcElement;
+		//alert(target.innerHTML);
+		if(target.nodeName.toLowerCase() == "li"){
+		target.style.background = "red";
+		}
+	}
+	oUl.onmouseout = function(ev){
+		var ev = ev || window.event;
+		var target = ev.target || ev.srcElement;
+		//alert(target.innerHTML);
+		if(target.nodeName.toLowerCase() == "li"){
+		target.style.background = "";
+		}
+	}
+}
+ 
+</script>
+
+<script type="text/javascript">
+
+  $(function(){
+		$("#ul2").on("mouseover","li",function(e){		
+		 $(e.target).css("background","red")
+	     		     
+		}).on("mouseout","li",function(e){		
+		 $(e.target).css("background","")
+	     	     
+		})
+  })
+</script>
+</body>
+</html>

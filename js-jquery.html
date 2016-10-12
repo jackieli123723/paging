@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"content="text/html; charset=gb2312"/>
+<title>js对象和jquery对象转换</title>
+ <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+<Style>
+.monospaced {
+    width: 100px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 14px;
+}
+
+.border {
+	width: 120px; height: 80px;
+	border: 10px solid #cd0000;
+	margin-top: 50px;
+}
+.fl{
+float:left;
+margin-right:200px;
+}
+
+pre{
+line-height:1; 
+background-color: #eee; 
+font-family: "Lucida Console", Monaco, monospace;
+ padding: .5em; 
+ white-space: pre-wrap;
+ word-wrap: break-word;
+}
+</style>
+<div class="fl">
+
+	<p><strong>边框类型：(原生js实现)</strong></p>
+	<select class="monospaced">
+		<option value="solid" selected>———————</option>
+		<option value="dashed">-------</option>
+		<option value="dotted">·······</option>
+	</select>
+
+	<p id="border" class="border"></p>
+	<br/>
+	<pre>
+//1.原生js实现
+//var eleBorder = document.getElementById('border');
+//document.getElementsByTagName('select')[0].onchange = function() {
+//	eleBorder.style.borderStyle = this.value;    
+//};
+
+//2.jquery对象转原生
+var eleBorder = $('#border')[0];
+$('select').eq(0)[0].onchange = function() {
+	eleBorder.style.borderStyle = this.value;    
+};
+	</pre>
+</div>
+
+<div class="fl">
+
+	<p><strong>边框类型：(jquery实现)</strong></p>
+	<select class="monospaced2">
+		<option value="solid" selected>———————</option>
+		<option value="dashed">-------</option>
+		<option value="dotted">·······</option>
+	</select>
+
+	<p id="border2" class="border"></p>
+	<br/>
+	<pre>
+var eleBorder2=  $(document.getElementById("border2"));
+$(".monospaced2").change(function(){
+  eleBorder2.css("borderStyle",$(this).val())
+})
+	</pre>
+	
+</div>
+<script type="text/javascript">
+
+
+    //1.原生js实现
+	//var eleBorder = document.getElementById('border');
+	//document.getElementsByTagName('select')[0].onchange = function() {
+	//	eleBorder.style.borderStyle = this.value;    
+	//};
+	
+	//2.jquery对象转原生
+	var eleBorder = $('#border')[0];
+	$('select').eq(0)[0].onchange = function() {
+		eleBorder.style.borderStyle = this.value;    
+	};
+	
+
+</script>
+
+<script type="text/javascript">
+
+  $(function(){
+		var eleBorder2=  $(document.getElementById("border2"));
+		$(".monospaced2").change(function(){
+		  eleBorder2.css("borderStyle",$(this).val())
+		})
+
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+
+<html>
+<head> 
+<title>demo</title> 
+<meta charset="UTF-8">
+<meta name="KEYWORDS" content="demo" /> 
+<meta name="DESCRIPTION" content="demo" /> 
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />	
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+
+<script  src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script> 
+<script type="text/javascript" src="nodetpl.js"></script>
+<style>
+*{margin:0;padding:0;}
+body{font-family:"Microsoft YaHei";font-size:14px;color:#838383;background:#fff;}
+ol,ul,li{list-style:none;}
+img{border:0 none;}
+a,input,textarea{outline:none;}
+.clearfix{*zoom:1;}
+.clearfix:after{clear:both;content:'';display:block;height:0;visibility:hidden;}
+.fr{float:left;}
+.fr{float:right}
+.hide{display: none;}
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.31);
+  z-index: 1003;
+  text-align: center;
+}
+
+.loading-img {
+  width: 200px;
+  height: 200px;
+  margin: 400px auto 0;
+}
+
+</style>
+</head> 
+<body>
+
+
+<table id="result">
+  
+</table>
+
+<div class="pageDiv" id="test">
+        
+</div>
+<strong  style="color:red" id="total"></strong>条记录
+<select class="pageChangeSize">
+     <option value="10">10</option>
+     <option value="20">20</option>
+     <option value="30">30</option>
+     <option value="50">50</option>
+</select>
+
+  <style type="text/css">
+    .pageDiv{
+      height: 40px;
+      margin-top:40px;
+    }
+  .pageDiv a{
+      width: 40px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      display: block;
+      float: left;
+      border:1px solid  #ccc;
+  }
+      .pageDiv a.active{
+      color: red;
+      font-weight: bold;
+      background:#ccc
+      }
+  </style>
+
+<Style>
+table tr td{border: 1px solid #cdcdcd;height: 30px;line-height: 30px;word-wrap: break-word;
+    word-break: break-all;text-align: center}
+</Style>
+
+<script id="favor-tpl" type="text/template">
+  <tr>
+    <th>时间</th>
+    <th>平台</th>
+    <th>渠道</th>
+    <th>1首</th>
+    <th>2首</th>
+    <th>3首</th>
+    <th>4首</th>
+    <th>5首</th>
+    <th>6首</th>
+    <th>7首</th>
+    <th>8首</th>
+    <th>9首</th>
+    <th>10首+ </th>
+  </tr>
+ 
+  <?for(var i=0; i<@data.length; i++){?>
+    <tr>
+      <td><?=getDateSplit(@data[i].dt)?></td>
+      <td><?=@data[i].platform?></td>
+      <td><?=@data[i].channel?></td>
+      <td><?=@data[i].playerNum1?></td>
+      <td><?=@data[i].playerNum2?></td>
+      <td><?=@data[i].playerNum3?></td>
+      <td><?=@data[i].playerNum4?></td>
+      <td><?=@data[i].playerNum5?></td>
+      <td><?=@data[i].playerNum6?></td>
+      <td><?=@data[i].playerNum7?></td>
+      <td><?=@data[i].playerNum8?></td>
+      <td><?=@data[i].playerNum9?></td>
+      <td><?=@data[i].playerNum10?></td>
+    </tr>
+  <?}?>
+ 
+</script>
+
+<script>
+var pageSize =$('.pageChangeSize').val();
+var url = "http://dataviewer.ilongyuan.com.cn/dataviewer/voez/getVoezPlaySongDayView.do?page=0&pageSize="+pageSize;
+var resultDom = document.getElementById('result');
+var content = document.getElementById('favor-tpl').innerHTML;
+ var $loadingCover = loadingCover("提交中……");
+$loadingCover.addClass("hide");
+
+function loadingCover (tips) {
+  var $loadingCover = $("body >.spinner-wrapper");
+  if ($loadingCover.length == 0) {
+    var html = '<div class="spinner-wrapper"><img class="loading-img" src="loading.gif"/></div>'
+    $("body").append(html);
+    $loadingCover = $("body >.spinner-wrapper");
+  }
+  if (tips) {
+    $loadingCover.find(".spinner-tips").html(tips);
+  }
+  return $loadingCover;
+}
+
+
+function ajax(url, data, method, oneVisitKey, mutiDealFun,bCover) {
+  var visitStatus = visitStatus || {};
+  data = data || {};
+  method = method || "GET";
+  var affix = "";
+  if(method == "GET") {
+    var affix = "?" + $.param($.extend({'_':new Date().getTime()}, data));
+  }
+  if (oneVisitKey) {
+    if (visitStatus[oneVisitKey]) {
+      var deferred = $.Deferred();
+      if (mutiDealFun) {
+        mutiDealFun();
+      }
+      return deferred.promise();
+    } else {
+      visitStatus[oneVisitKey] = true;
+    }
+  }
+   if (bCover) {
+    $loadingCover.removeClass("hide");
+  }
+  return $.ajax({
+    type: method,
+    //GET防止缓存
+    url: url + affix,
+    data:  method == 'POST' ? (data ? data: null) : null,
+    headers : {Accept: "application/json; charset=UTF-8"},
+    contentType: "application/x-www-form-urlencoded; application/json; charset=UTF-8"
+  }).done(function(res) {
+    //todo
+  }).fail(function() {
+    //todo
+  }).always(function() {
+        if (bCover) {
+          $loadingCover.addClass("hide");
+        }
+        if (oneVisitKey) {
+          visitStatus[oneVisitKey] = null;
+        }
+  });
+}
+
+
+
+
+//时间转换
+function getDateSplit(timstamp) {
+  var date = new Date(timstamp);
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var today = date.getDate();
+  var hour=date.getHours();     
+  var minute=date.getMinutes();     
+  var second=date.getSeconds(); 
+ if(month<10){
+    month="0"+month;
+    }
+
+  if(today<10){
+    today="0"+today;
+  }
+   if(hour<10){
+    hour="0"+hour;
+  }
+
+  if(minute<10){
+    minute="0"+minute;
+  }
+  if(second<10){
+    second="0"+second;
+  }
+
+  return date.getFullYear() + "-"+ month + "-"+ today + "-"+ hour+ "：" + minute + "："+ second; 
+}
+
+ajax(url, {}, "get", "LOGIN__CHECK",1).done(function (resp) {
+      console.log(resp.data.length);
+      //showPage(1,resp.total,url);
+	  appendPage(1,resp.total,"test");
+      $("#total").text(resp.total);
+      nodetpl.render(content, resp, function(d){
+        resultDom.innerHTML = d;
+      })
+    }).fail(function (resp) {
+      //show_msg("网络异常，请稍后重试！");
+    }).always(function() {
+       
+    });
+
+
+ $('.pageChangeSize').change(function(){  
+        var newpageSize=$(this).val(); 
+        var newurl=url.replace("pageSize="+pageSize,"pageSize="+newpageSize);
+        console.log(pageSize);
+        ajax(newurl, {}, "get", "LOGIN__CHECK",1).done(function (resp) {
+          console.log(resp.data.length);
+          showPage(1,resp.total,newurl);
+          nodetpl.render(content, resp, function(d){
+            resultDom.innerHTML = d;
+          })
+        }).fail(function (resp) {
+          //show_msg("网络异常，请稍后重试！");
+        }).always(function() {
+           
+        });
+   })   
+
+   $(".page-guide a").on("click",function (event) {
+    if (_hasDisabled(event)) {
+      return false;
+    }
+    return _clickFun(event, $(this).attr("data-page"));
+  });
+
+  $("#gotoPage").on("keypress",function(event){
+    var curKey = event.which;
+    if(curKey == 13) {
+      var page = $(this).val();
+      if (page > 0 && page <= PAGE_PARA.pageCount) {
+        _clickFun(event, page);
+      } else {
+        show_msg("页码错误，请重新输入！");
+      }
+    }
+  }); 
+
+function appendPage(currentPage,pageCount,display){
+
+  var html = ""
+  +'<div class="page-guide fl"> '
+  +'  <div class="tiaozhuan fl"> '
+  +'    跳转至<input id="gotoPage" type="text" class="pagenum" /> '
+  +'  </div> ';
+
+   
+  var showNum = 3 - 1;
+
+  html += ' <div class="fl"> '
+      +'<ul>';
+      var lastPage = currentPage - 1;
+      var startPage = 1;
+      var endPage = 1;
+
+      if(currentPage - 1 > 1){
+        startPage = currentPage - 1;
+      }else{
+        startPage  = 1;
+      }
+
+
+      if (startPage+showNum<pageCount) {
+        endPage = startPage + showNum;
+      }else{
+        endPage = pageCount;
+      } 
+
+
+      if (endPage - showNum < 1 ) {
+        startPage = 1
+      }else if(startPage > endPage - showNum ){
+        if (endPage - showNum > 1) {
+          startPage =  endPage - showNum;
+        }else{
+          startPage = 1;
+        }
+      } 
+
+      if (currentPage > 1) {
+        html+='<li class="first" >'
+            +'<a data-page="'+lastPage+'" href="#" class="pre">上一页</a></li> ';
+      } 
+
+      if (startPage>1) {
+        html+='<li  ><a data-page="1" href="goPage(1)">1'
+        if (startPage>2) {
+          html+='...';
+        };
+        html+='</a></li>';
+      } 
+      
+
+      for (var i = startPage; i <= endPage; i++) {
+        if (currentPage==i) {
+         html+= '<li  class="active"  >'+
+             '<a data-page="'+i+'" href="javascript:;">'+i+'</a></li>'
+        }else{
+         html+= '<li  >'+
+             '<a data-page="'+i+'" href="javascript:;">'+i+'</a></li>'
+        }
+      }
+
+      var nextPage = currentPage +1;
+      
+      if (endPage < pageCount ) {
+        html+=  '<li  >'
+          +' <a data-page="'+pageCount+'" href="javascript:;">'
+          if (endPage < pageCount -1 ) {
+            html+= '...';
+          };
+          html+=pageCount+'</a></li>'
+      };
+
+      if (pageCount - currentPage > 0) {
+        html+= ' <li  class="last"><a data-page="'+nextPage+'" '
+            +'href="javascript:;" class="next">下一页</a></li>'
+      };
+
+      html+='</ul> </div> </div>';
+
+
+      $('#'+display).html(html);
+
+
+}
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

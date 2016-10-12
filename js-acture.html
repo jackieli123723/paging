@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"content="text/html; charset=gb2312"/>
+<title>js对象和jquery对象转换</title>
+
+</head>
+<body>
+<Style>
+ul li{
+
+ height:40px;
+ line-height:40px;
+ font-size:20px;
+ width:200px;
+}
+
+pre{
+line-height:1; 
+background-color: #eee; 
+font-family: "Lucida Console", Monaco, monospace;
+ padding: .5em; 
+ white-space: pre-wrap;
+ word-wrap: break-word;
+}
+
+.fl{
+float:left;
+width:50%;
+}
+
+button{
+    width: 100px;
+    height: 40px;
+	font-size:16px;
+}
+
+p{
+border:1px solid #000;
+}
+</style>
+
+<h2>js事件捕获</h2>
+
+<p>
+	<button>js事件捕获</button>
+</p>
+
+<pre>
+window.onload = function(){
+    var $button = document.getElementsByTagName("button")[0];
+	var $p= document.getElementsByTagName("p")[0];
+	var $body = document.getElementsByTagName("body")[0];
+	
+	$button .addEventListener("click", function(){
+	alert("red")
+	}, true)
+
+	$p.addEventListener("click", function(){
+	alert("green")
+	}, true)
+
+	$body.addEventListener("click", function(){
+	alert("yellow")
+	}, true)
+
+}
+
+</pre>
+
+
+
+
+
+<script type="text/javascript">
+window.onload = function(){
+    var $button = document.getElementsByTagName("button")[0];
+	var $p= document.getElementsByTagName("p")[0];
+	var $body = document.getElementsByTagName("body")[0];
+	
+	$button .addEventListener("click", function(){
+	alert("red")
+	}, true)
+
+	$p.addEventListener("click", function(){
+	alert("green")
+	}, true)
+
+	$body.addEventListener("click", function(){
+	alert("yellow")
+	}, true)
+
+}
+ 
+</script>
+
+
+</body>
+</html>
