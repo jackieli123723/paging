@@ -411,10 +411,11 @@
         // phtml +="<a href='javascript:;'>首页</a>";
         // }else{
         //   //phtml +="<a href='javascript:;' data='"+url+"' page='0' >首页</a>";
-        //   var surl =  pageurl.replace("page=0","page="+(nowPage-1));
+        //   var surl =  pageurl.replace(/page=(\d+)/,"page="+(nowPage-1));
         //   phtml +="<a href='javascript:;' data='"+surl+"' page='"+0+"' >首页</a>";
         // }
         
+        //首页
         if (nowPage == 1) {
             var surl = pageurl.replace(/page=(\d+)/, "page=" + 0);
             phtml += "<a href='javascript:;' data='" + surl + "' page=''>首页</a>";
@@ -430,14 +431,16 @@
         if (nowPage == 1) {
             phtml += "<a href='javascript:;'>上一页</a>";
         } else {
-            var furl = pageurl.replace("page=0", "page=" + (nowPage - 2));
+            var furl = pageurl.replace(/page=(\d+)/, "page=" + (nowPage - 2));
             phtml += "<a href='javascript:;' class='prev' data='" + furl + "' page='" + (nowPage - 1) + "' >上一页</a>";
         }
 
 
+
+        //中间页
         if (totalPage <= 7) {
             for (var i = 1; i <= totalPage; i++) {
-                var nurl = pageurl.replace("page=0", "page=" + (i - 1));
+                var nurl = pageurl.replace(/page=(\d+)/, "page=" + (i - 1));
                 if (nowPage == i) {
                     phtml += "<a href='javascript:;' class='active' data='" + nurl + "' page='" + i + "' >" + i + "</a>";
                 } else {
@@ -448,7 +451,7 @@
         } else {
             if (nowPage - 3 <= 1) {
                 for (var i = 1; i <= 5; i++) {
-                    var nurl = pageurl.replace("page=0", "page=" + (i - 1));
+                    var nurl = pageurl.replace(/page=(\d+)/, "page=" + (i - 1));
                     if (nowPage == i) {
                         phtml += "<a href='javascript:;' class='active' data='" + nurl + "' page='" + i + "'>" + i + "</a>";
                     } else {
@@ -456,16 +459,16 @@
                     }
                 }
                 phtml += "<a href='javascript:;'>…</a>";
-                var endurl = pageurl.replace("page=0", "page=" + (totalPage - 1));
+                var endurl = pageurl.replace(/page=(\d+)/, "page=" + (totalPage - 1));
                 phtml += "<a href='javascript:;' data='" + endurl + "' page=" + totalPage + ">" + totalPage + "</a>";
             } else {
                 console.log(nowPage + "=====" + totalPage);
                 if ((nowPage + 4) > totalPage) {
-                    var starturl = pageurl.replace("page=0", "page=1");
+                    var starturl = pageurl.replace(/page=(\d+)/, "page=1");
                     phtml += "<a href='javascript:;' data='" + starturl + "' page=1>1</a>";
                     phtml += "<a href='javascript:;'>…</a>";
                     for (var i = totalPage - 4; i <= totalPage; i++) {
-                        var nurl = pageurl.replace("page=0", "page=" + (i - 1));
+                        var nurl = pageurl.replace(/page=(\d+)/, "page=" + (i - 1));
                         if (nowPage == i) {
                             phtml += "<a href='javascript:;' class='active' data='" + nurl + "' page='" + i + "' >" + i + "</a>";
                         } else {
@@ -474,11 +477,11 @@
                     }
                 } else {
 
-                    var starturl = pageurl.replace("page=0", "page=1");
+                    var starturl = pageurl.replace(/page=(\d+)/, "page=1");
                     phtml += "<a href='javascript:;' data='" + starturl + "' page=1>1</a>";
                     phtml += "<a href='javascript:;'>…</a>";
                     for (var i = nowPage - 1; i <= nowPage + 1; i++) {
-                        var nurl = pageurl.replace("page=0", "page=" + (i - 1));
+                        var nurl = pageurl.replace(/page=(\d+)/, "page=" + (i - 1));
                         if (nowPage == i) {
                             phtml += "<a href='javascript:;' class='active' data='" + nurl + "' page='" + i + "'>" + i + "</a>";
                         } else {
@@ -486,7 +489,7 @@
                         }
                     }
                     phtml += "<a href='javascript:;'>…</a>";
-                    var endurl = pageurl.replace("page=0", "page=" + (totalPage - 1));
+                    var endurl = pageurl.replace(/page=(\d+)/, "page=" + (totalPage - 1));
                     phtml += "<a href='javascript:;' data='" + endurl + "' page=" + totalPage + ">" + totalPage + "</a>";
                 }
             }
@@ -497,22 +500,23 @@
         if (nowPage == totalPage) {
             phtml += "<a href='javascript:;'>下一页</a>";
         } else {
-            var eurl = pageurl.replace("page=0", "page=" + nowPage);
+            var eurl = pageurl.replace(/page=(\d+)/, "page=" + nowPage);
             phtml += "<a href='javascript:;' class='next' data='" + eurl + "' page='" + (nowPage + 1) + "' >下一页</a>";
         }
 
 
-
+        //尾页
         if (nowPage == totalPage) {
 
-            var nurl = pageurl.replace("page=0", "page=" + (totalPage - 1));
+            var nurl = pageurl.replace(/page=(\d+)/, "page=" + (totalPage - 1));
             phtml += "<a href='javascript:;' data='" + nurl + "' page='' >尾页</a>";
         } else {
-            var nurl = pageurl.replace("page=0", "page=" + (totalPage - 1));
+            var nurl = pageurl.replace(/page=(\d+)/, "page=" + (totalPage - 1));
             phtml += "<a href='javascript:;' data='" + nurl + "' page='" + totalPage + "' >尾页</a>";
         }
 
-        
+       
+        //页码跳转 
         phtml+='<input id="go" value="'+nowPage+'" />';
         phtml+= '<button id="goPage" data="'+pageurl+'">确定</button>';
 

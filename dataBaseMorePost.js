@@ -1114,6 +1114,8 @@ function showPage(nowPage, totalCell, pageurl, fid) {
     }
 
 
+   //中间页
+
     if (totalPage <= 7) {
         for (var i = 1; i <= totalPage; i++) {
             var nurl = pageurl.replace(/page=(\d+)/, "page=" + (i - 1));
