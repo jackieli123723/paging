@@ -1,0 +1,780 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <title>龙渊网络科技--龙渊数据统计平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="龙渊网络科技--龙渊数据统计平台" />
+    <meta name="description" content="龙渊网络科技--龙渊数据统计平台" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dateRange.css" />
+</head>
+
+<body>
+    <div class="toTop"><img src="images/home/totop.png" /></div>
+    <div class="top-content">
+        <div class="top-content-box clearfix">
+            <img src="images/home/logo.png" class="logo-icon fl" />
+            <ul class="top-nav fl">
+                <li class="active"><a href="#">分系统导航</a></li>
+                <li><a href="#">账户管理</a></li>
+                <li><a href="#">权限管理</a></li>
+            </ul>
+            <ul class="top-out ">
+                <li>
+                    <a href="#"><img src="images/home/person.png" />
+                        <div class="top-text">李立冬</div>
+                    </a>
+                </li>
+                <li class="last">
+                    <a href="#"><img src="images/home/out.png" />
+                        <div class="top-text">退出</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="home-select clearfix">
+            <img src="images/home/home-icon.png" class="fl home" />
+            <div class="home-game fl" id="allGame" data-value="6dba18fd57e443889dc45f93fd106561">
+                <span>兰空voez</span>
+                <img src="images/home/arrow.png" />
+            </div>
+            <div class="home-game fl" id="allPhone" data-value="1">
+                <span>Android</span>
+                <img src="images/home/arrow.png" />
+            </div>
+        </div>
+    </div>
+    <ul class="game-all selectdiv hide" id="gameText">
+        <li data-value="0">
+            <div class="checkbox"></div><span>全部游戏</span></li>
+        <li data-value="ly">
+            <div class="checkbox"></div><span>自由之战1</span></li>
+        <li data-value="2">
+            <div class="checkbox"></div><span>自由之战2</span></li>
+        <li data-value="3">
+            <div class="checkbox"></div><span>自由之战3</span></li>
+        <li data-value="4">
+            <div class="checkbox"></div><span>自由之战4</span></li>
+    </ul>
+    <ul class="game-phone selectdiv hide" id="phoneText">
+        <li data-value="0">
+            <div class="checkbox"></div><span>全部平台</span></li>
+        <li data-value="1">
+            <div class="checkbox"></div><span>Android</span></li>
+        <li data-value="2">
+            <div class="checkbox"></div><span>ios</span></li>
+        <li data-value="3">
+            <div class="checkbox"></div><span>Windows Phone</span></li>
+    </ul>
+    <div class="box-content">
+        <div class="left-content">
+            <div class="accordion">
+                <h3><img src="images/home/youxi-icon.png" class="menua-icon"/>游戏概况</h3>
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_45.png" />实时统计</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />总体趋势</a>
+                    </li>
+                </ul>
+                <h3><img src="images/home/user-icon.png" class="menua-icon"/>用户分析</h3>
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_45.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />活跃玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />留存统计</a>
+                    </li>
+                </ul>
+                <h3><img src="images/home/pay-icon.png" class="menua-icon"/>付费分析</h3>
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_45.png" />付费数据</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />付费行为</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />付费转化</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />付费排行</a>
+                    </li>
+                </ul>
+                <h3><img src="images/home/save-icon.png" class="menua-icon"/>留存分析</h3>
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_45.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                </ul>
+                <h3><img src="images/home/online-icon.png" class="menua-icon"/>在线分析</h3>
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_45.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                </ul>
+                <h3><img src="images/home/qudao-icon.png" class="menua-icon"/>渠道分析</h3>
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_45.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                </ul>
+                <h3><img src="images/home/note-icon.png" class="menua-icon"/>版本分析</h3>
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_45.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                </ul>
+                <h3><img src="images/home/event-icon.png" class="menua-icon"/>事件分析</h3>
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_45.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                </ul>
+                <h3><img src="images/home/sys-icon.png" class="menua-icon"/>系统分析</h3>
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_45.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                </ul>
+                <h3><img src="images/home/error-icon.png" class="menua-icon"/>异常分析</h3>
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_45.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                </ul>
+                <h3><img src="images/home/chart-icon.png" class="menua-icon"/>报表</h3>
+                <ul>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_45.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/home/newplayers_49.png" />新增玩家</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="main-box">
+                <div class="index-time clearfix">
+                    <span class="times today" id="toDay" data-num="0">今日</span><span class="times yestady " id="yesterDay" data-num="1">昨日</span><i>日期：</i>
+                    <input type="text" class="index-date" id="dateTime" />
+                    <div class="index-search">筛选</div>
+                    <div class="search-select-box hide">
+                        <div class="search-main">
+                            <div class="search-input-box">
+                                <input class="search-home-input" type="text" id="nope" />
+                                <span class="search-home-button"></span>
+                            </div>
+                            <ul class="tabNav clearfix">
+                                <li class="cur" data-key="1">渠道</li>
+                                <li data-key="2">版本</li>
+                                <li data-key="3">区服</li>
+                            </ul>
+                            <div class="tabCon">
+                                <ul class="on clearfix">
+                                    <li data-value="qq" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>qq</span></li>
+                                    <li data-value="dangle" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>dangle</span></li>
+                                    <li data-value="wx" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>wx</span></li>
+                                    <li data-value="bd" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>bd</span></li>
+                                    <li data-value="meizu" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>meizu</span></li>
+                                    <li data-value="anzhi" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>anzhi</span></li>
+                                    <li data-value="4399" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>4399</span></li>
+                                    <li data-value="yyh" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>yyh</span></li>
+                                    <li data-value="jinli" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>jinli</span></li>
+                                    <li data-value="ly" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>ly</span></li>
+                                    <li data-value="360" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>360</span></li>
+                                    <li data-value="uc" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>uc</span></li>
+                                    <li data-value="aiyouxi" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>aiyouxi</span></li>
+                                    <li data-value="hw" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>hw</span></li>
+                                    <li data-value="guopan" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>guopan</span></li>
+                                    <li data-value="oppo" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>oppo</span></li>
+                                    <li data-value="htc" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>htc</span></li>
+                                    <li data-value="leshi" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>leshi</span></li>
+                                    <li data-value="vivo" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>vivo</span></li>
+                                    <li data-value="wdj" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>wdj</span></li>
+                                    <li data-value="mi" data-key="1">
+                                        <div class="checkbox"></div>
+                                        <span>mi</span></li>
+                                </ul>
+                                <ul class=" clearfix">
+                                    <li data-value="2.2.1" data-key="2">
+                                        <div class="checkbox"></div><span>版本2.0</span></li>
+                                    <li data-value="2.0.2" data-key="2">
+                                        <div class="checkbox"></div><span>版本2.0</span></li>
+                                    <li data-value="2.3.3" data-key="2">
+                                        <div class="checkbox"></div><span>版本2.0</span></li>
+                                    <li data-value="2.0.4" data-key="2">
+                                        <div class="checkbox"></div><span>版本2.0</span></li>
+                                    <li data-value="2.0.5" data-key="2">
+                                        <div class="checkbox"></div><span>版本2.0</span></li>
+                                    <li data-value="2.0.6" data-key="2">
+                                        <div class="checkbox"></div><span>版本2.0</span></li>
+                                    <li data-value="2.0.7" data-key="2">
+                                        <div class="checkbox"></div><span>版本2.0</span></li>
+                                    <li data-value="2.0.8" data-key="2">
+                                        <div class="checkbox"></div><span>版本2.0</span></li>
+                                </ul>
+                                <ul class="clearfix">
+                                    <li data-value="3.0.1" data-key="3">
+                                        <div class="checkbox"></div><span>版本3.0</span></li>
+                                    <li data-value="3.0.2" data-key="3">
+                                        <div class="checkbox"></div><span>版本3.0</span></li>
+                                    <li data-value="3.0.3" data-key="3">
+                                        <div class="checkbox"></div><span>版本3.0</span></li>
+                                    <li data-value="3.0.4" data-key="3">
+                                        <div class="checkbox"></div><span>版本3.0</span></li>
+                                    <li data-value="3.0.5" data-key="3">
+                                        <div class="checkbox"></div><span>版本3.0</span></li>
+                                    <li data-value="3.0.6" data-key="3">
+                                        <div class="checkbox"></div><span>版本3.0</span></li>
+                                    <li data-value="3.0.7" data-key="3">
+                                        <div class="checkbox"></div><span>版本3.0</span></li>
+                                    <li data-value="3.0.8" data-key="3">
+                                        <div class="checkbox"></div><span>版本3.0</span></li>
+                                </ul>
+                            </div>
+                            <div class="checkbox-btn-box clearfix">
+                                <span class="checkbox-btn checkbox-sure fl">确定</span><span class="checkbox-btn checkbox-cancel fr">取消</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line-box-list clearfix hide" data-key="1">
+                    <h1>渠道：</h1>
+                    <!-- input type="text" class="list-text" readonly="readonly" value="1.0" placeholder="对应的版本编号" />
+             <input type="text" class="list-text" readonly="readonly" value="2.0" placeholder="对应的版本编号"  />
+             <input type="text" class="list-text" readonly="readonly" value="3.0" placeholder="对应的版本编号" />
+             <input type="text" class="list-text" readonly="readonly" value="4.0" placeholder="对应的版本编号"  />
+             <input type="text" class="list-text" readonly="readonly" value="5.0" placeholder="对应的版本编号"  /> -->
+                    <span class="list-clear">全部清除</span>
+                </div>
+                <div class="line-box-list clearfix hide" data-key="2">
+                    <h1>版本：</h1>
+                    <!--              <input type="text" class="list-text" readonly="readonly" placeholder="对应的版本编号" />
+             <input type="text" class="list-text" readonly="readonly" />
+             <input type="text" class="list-text" readonly="readonly" />
+             <input type="text" class="list-text" readonly="readonly" />
+             <input type="text" class="list-text" readonly="readonly" /> -->
+                    <span class="list-clear">全部清除</span>
+                </div>
+                <div class="line-box-list clearfix hide" data-key="3">
+                    <h1>区服：</h1>
+                    <!-- <input type="text" class="list-text" readonly="readonly" placeholder="对应的版本编号" />
+             <input type="text" class="list-text" readonly="readonly"/>
+             <input type="text" class="list-text" readonly="readonly"/>
+             <input type="text" class="list-text" readonly="readonly"/>
+             <input type="text" class="list-text" readonly="readonly"/> -->
+                    <span class="list-clear">全部清除</span>
+                </div>
+                <ul id="basicTotal" class="game-detail-tab clearfix">
+                    <li class="down">
+                        <a href="#">
+                            <div class="game-detail-text">累计新增设备</div>
+                            <img src="images/home/game-1.png">
+                            <div id="totalDeviceAddUserNum" class="game-detail-num" value="0" data-num="978037">978,037</div>
+                            <div class="game-arrow"></div>
+                        </a>
+                    </li>
+                    <li class="down">
+                        <a href="#">
+                            <div class="game-detail-text">累计新增账号</div>
+                            <img src="images/home/game-2.png">
+                            <div id="totalAddUserNum" class="game-detail-num" value="0" data-num="958904">958,904</div>
+                            <div class="game-arrow"></div>
+                        </a>
+                    </li>
+                    <li class="down">
+                        <a href="#">
+                            <div class="game-detail-text">平均活跃人数</div>
+                            <img src="images/home/game-3.png">
+                            <div id="averageDailyActiveUserNum" class="game-detail-num" value="0" data-num="29779">29,779</div>
+                            <div class="game-arrow"></div>
+                        </a>
+                    </li>
+                    <li class="up">
+                        <a href="#">
+                            <div class="game-detail-text">累计付费人数</div>
+                            <img src="images/home/game-4.png">
+                            <div id="totalFirstPayUserNum" class="game-detail-num" value="0" data-num="4252">4,252</div>
+                            <div class="game-arrow"></div>
+                        </a>
+                    </li>
+                    <li class="down">
+                        <a href="#">
+                            <div class="game-detail-text">累计付费金额</div>
+                            <img src="images/home/game-5.png">
+                            <div id="totalTotalMoney" class="game-detail-num" value="0" data-num="197215">197,215</div>
+                            <div class="game-arrow"></div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="table-box" id="activeLogin">
+                    <div class="table-top-title">激活注册<strong class="popoverTip"><img src="images/tips.png" /></strong>
+                        <div class="popover">
+                            <div class="arrow"></div>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                        </div>
+                        <div class="table-select-right-change">
+                            <span>列表展示</span>
+                            <ul class="hide">
+                                <li class="active">列表展示</li>
+                                <li>图表展示</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-box-list">
+                        <table width="100%" border="0">
+                        </table>
+                        <div class="page-list clearfix">
+                            <span class="page-text">共<span class="page-total" ></span>条记录,每页显示</span>
+                            <select class="pageChangeSize">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                            </select>
+                            <ul class="page-list-go fr">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-box-chart hide">
+                        <div class="chart">
+                        </div>
+                    </div>
+                </div>
+                <div class="table-box" id="Active">
+                    <div class="table-top-title">活跃<strong class="popoverTip"><img src="images/tips.png" /></strong>
+                        <div class="popover">
+                            <div class="arrow"></div>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                        </div>
+                        <div class="table-select-right-change">
+                            <span>列表展示</span>
+                            <ul class="hide">
+                                <li class="active">列表展示</li>
+                                <li>图表展示</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-box-list">
+                        <table width="100%" border="0">
+                        </table>
+                        <div class="page-list clearfix">
+                            <span class="page-text">共<span class="page-total" ></span>条记录,每页显示</span>
+                            <select class="pageChangeSize">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                            </select>
+                            <ul class="page-list-go fr">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-box-chart hide">
+                        <div class="chart">
+                        </div>
+                    </div>
+                </div>
+                <div class="table-box" id="payUserLink">
+                    <div class="table-top-title">付费用户追踪<strong class="popoverTip"><img src="images/tips.png" /></strong>
+                        <div class="popover">
+                            <div class="arrow"></div>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                        </div>
+                        <div class="table-select-right-change">
+                            <span>列表展示</span>
+                            <ul class="hide">
+                                <li class="active">列表展示</li>
+                                <li>图表展示</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-box-list">
+                        <table width="100%" border="0">
+                        </table>
+                        <div class="page-list clearfix">
+                            <span class="page-text">共<span class="page-total" ></span>条记录,每页显示</span>
+                            <select class="pageChangeSize">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                            </select>
+                            <ul class="page-list-go fr">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-box-chart hide">
+                        <div class="chart">
+                        </div>
+                    </div>
+                </div>
+                <div class="table-box" id="Leave">
+                    <div class="table-top-title">留存趋势<strong class="popoverTip"><img src="images/tips.png" /></strong>
+                        <div class="popover">
+                            <div class="arrow"></div>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                            <p><span>日ARPU值</span>：某日平均每个活跃用户的收入（日收入/日活跃用户）</p>
+                        </div>
+                        <div class="table-select-right-change">
+                            <span>列表展示</span>
+                            <ul class="hide">
+                                <li class="active">列表展示</li>
+                                <li>图表展示</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-box-list">
+                        <table width="100%" border="0">
+                        </table>
+                        <div class="page-list clearfix">
+                            <span class="page-text">共<span class="page-total" ></span>条记录,每页显示</span>
+                            <select class="pageChangeSize">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                            </select>
+                            <ul class="page-list-go fr">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-box-chart hide">
+                        <div class="chart">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/dateRange.js"></script>
+    <script src="js/echarts.js"></script>
+    <script src="js/LyDataMmodule.js"></script>
+    <script>
+    $(function() {
+        $(".accordion h3").eq(0).addClass("active");
+        $(".accordion ul").eq(0).show().siblings("ul").hide();
+        $(".game-detail-tab").find(".game-detail-num").each(function(index, item) {
+
+            var $this = $(item);
+            var number = parseInt($this.text());
+            var transformNumber1 = transformNumber(number);
+            $this.text(transformNumber1);
+
+        })
+    })
+
+
+
+    function initParamsHref(tempObj) {
+        return tempObj.baseHref + "&page=" + tempObj.page + "&pageSize=" + tempObj.pageSize + "&appId=" + tempObj.appId + "&platform=" + tempObj.platform + "&startDate=" + tempObj.begintime + "&endDate=" + tempObj.endtime + "&channelField=" + tempObj.channelField + "&versionField=" + tempObj.versionField + "&areaField=" + tempObj.areaField;
+    }
+
+    var resultTableObj = {
+        option: [{
+                baseHref: "http://dataviewer.ilongyuan.com.cn/app/gameBasic/basicTotalTable.do?",
+                cacheUrl: "",
+                page: 0,
+                pageSize: 10,
+                appId: "6dba18fd57e443889dc45f93fd106561",
+                platform: "1",
+                begintime: "",
+                endtime: "",
+                channelField: "",
+                versionField: "",
+                areaField: "",
+                id: "basicTotal",
+                isChartOpen: 0
+            },
+
+
+            {
+                baseHref: "http://dataviewer.ilongyuan.com.cn/app/gameBasic/addTable.do?",
+                cacheUrl: "",
+                page: 0,
+                pageSize: 10,
+                appId: "6dba18fd57e443889dc45f93fd106561",
+                platform: "1",
+                begintime: "",
+                endtime: "",
+                channelField: "",
+                versionField: "",
+                areaField: "",
+                id: "activeLogin",
+                tableTh: '<tr>' +
+                    '<th width="20%" class="br-first">时间</th>' +
+                    '<th width="20%">设备激活</th>' +
+                    '<th width="20%">新增账户</th>' +
+                    '<th width="20%">新增设备</th>' +
+                    '<th width="20%" class="br-last">玩家转化率</th>' +
+                    '</tr>',
+                tableTd: {
+                    dt: 'getDateSplit',
+                    deviceActiveAddUserNum: "",
+                    addUserNum: "",
+                    deviceAddUserNum: "",
+                    playerConversionRate: "transFloat",
+                },
+                chartTotal: "",
+                isChartOpen: 1,
+                chartText: "激活注册",
+                chartDataWord: ["日期", "设备激活", "新增账户", "新增设备", "设备转化率"],
+                chartDataLine: {
+                    dt: "getDateSplit",
+                    deviceActiveAddUserNum: "",
+                    addUserNum: "",
+                    deviceAddUserNum: "",
+                    playerConversionRate: "transFloat",
+                }
+            }, {
+                baseHref: "http://dataviewer.ilongyuan.com.cn/app/gameBasic/activeTable.do?",
+                cacheUrl: "",
+                page: 0,
+                pageSize: 10,
+                appId: "6dba18fd57e443889dc45f93fd106561",
+                platform: "1",
+                begintime: "",
+                endtime: "",
+                channelField: "",
+                versionField: "",
+                areaField: "",
+                id: "Active",
+                tableTh: '<tr>' +
+                    '<th width="16%" class="br-first">时间</th>' +
+                    '<th width="16%">净活跃人数(老用户)</th>' +
+                    '<th width="16%">新增活跃(新用户)</th>' +
+                    '<th width="16%">总活跃</th>' +
+                    '<th width="16%">老用户占有</th>' +
+                    '<th class="br-last">新用户占有</th>' +
+                    '</tr>',
+                tableTd: {
+                    dt: 'getDateSplit',
+                    expectAddActiveUserNum: "",
+                    addActiveUserNum: "",
+                    dailyActiveUserNum: "",
+                    expectAddActiveUserProportion: "transFloat",
+                    AddActiveUserProportion: "transFloat",
+                },
+                chartTotal: "",
+                isChartOpen: 1,
+                chartText: "活跃用户",
+                chartDataWord: ["日期", "净活跃人数(老用户)", "新增活跃(新用户)", "总活跃", "老用户占有", "新用户占有"],
+                chartDataLine: {
+                    dt: "getDateSplit",
+                    expectAddActiveUserNum: "",
+                    addActiveUserNum: "",
+                    dailyActiveUserNum: "",
+                    expectAddActiveUserProportion: "transFloat",
+                    AddActiveUserProportion: "transFloat",
+                }
+            }, {
+                baseHref: "http://dataviewer.ilongyuan.com.cn/app/gameBasic/buyTable.do?",
+                cacheUrl: "",
+                page: 0,
+                pageSize: 10,
+                appId: "6dba18fd57e443889dc45f93fd106561",
+                platform: "1",
+                begintime: "",
+                endtime: "",
+                channelField: "",
+                versionField: "",
+                areaField: "",
+                id: "payUserLink",
+                tableTh: '<tr>' +
+                    '<th width="12.5%" class="br-first">时间</th>' +
+                    '<th width="12.5%">付费金额</th>' +
+                    '<th width="12.5%">付费人数</th>' +
+                    '<th width="12.5%">新增付费人数</th>' +
+                    '<th width="12.5%">新增付费金额</th>' +
+                    '<th width="12.5%">日付费率</th>' +
+                    '<th width="12.5%">日ARPU</th>' +
+                    '<th width="12.5%" class="br-last">日ARPPU</th>' +
+                    '</tr>',
+                tableTd: {
+                    dt: 'getDateSplit',
+                    totalMoney: "",
+                    payActiveUserNum: "",
+                    payAddUserNum: "",
+                    addUserTotalMoney: "",
+                     payUserRate: 'transFloat2Percent',
+                    averageRevenuePerUser: 'transFloat',
+                    averageRevenuePerPayingUser: 'transFloat',
+
+                },
+                chartTotal: "",
+                isChartOpen: 1,
+                chartText: "付费统计",
+                chartDataWord: ["日期", "付费金额", "付费人数", "新增付费人数", "新增付费金额", "日付费率", "日ARPU", "日ARPPU"],
+                chartDataLine: {
+                    dt: 'getDateSplit',
+                    totalMoney: "",
+                    payActiveUserNum: "",
+                    payAddUserNum: "",
+                    addUserTotalMoney: "",
+                     payUserRate: 'transFloat',
+                    averageRevenuePerUser: 'transFloat',
+                    averageRevenuePerPayingUser: 'transFloat',
+
+                }
+            }, {
+                baseHref: "http://dataviewer.ilongyuan.com.cn/app/gameBasic/retentionTable.do?",
+                cacheUrl: "",
+                page: 0,
+                pageSize: 10,
+                appId: "6dba18fd57e443889dc45f93fd106561",
+                platform: "1",
+                begintime: "",
+                endtime: "",
+                channelField: "",
+                versionField: "",
+                areaField: "",
+                id: "Leave",
+                tableTh: '<tr>' +
+                    '<th width="14%" class="br-first">时间</th>' +
+                    '<th width="14%">一日留存</th>' +
+                    '<th width="14%">二日留存</th>' +
+                    '<th width="14%">三日留存</th>' +
+                    '<th width="14%">周留存</th>' +
+                    '<th width="14%">15日留存</th>' +
+                    '<th class="br-last">30日留存</th>' +
+                    '</tr>',
+                tableTd: {
+                    dt: 'getDateSplit',
+                    activeUserRetentionNum1day: "transFloat",
+                    activeUserRetentionNum2day: "transFloat",
+                    activeUserRetentionNum3day: "transFloat",
+                    activeUserRetentionNum7day: "transFloat",
+                    activeUserRetentionNum15day: "transFloat",
+                    activeUserRetentionNum30day: "transFloat",
+                },
+                chartTotal: "",
+                isChartOpen: 1,
+                chartText: "留存统计",
+                chartDataWord: ["日期", "一日留存", "二日留存", "三日留存", "周留存", "15日留存", "30日留存"],
+                chartDataLine: {
+                    dt: 'getDateSplit',
+                    activeUserRetentionNum1day: "transFloat",
+                    activeUserRetentionNum2day: "transFloat",
+                    activeUserRetentionNum3day: "transFloat",
+                    activeUserRetentionNum7day: "transFloat",
+                    activeUserRetentionNum15day: "transFloat",
+                    activeUserRetentionNum30day: "transFloat",
+                }
+            }
+
+        ]
+
+    }
+    </script>
+    <script src="js/dataBaseMorePost.js"></script>
+    <script type="text/javascript">
+    </script>
+</body>
+
+</html>

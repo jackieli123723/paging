@@ -1,0 +1,434 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #000;
+  background: #f5f5f5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+img {
+  border: 0 none;
+}
+a {
+  text-decoration: none;
+}
+a,
+input,
+textarea {
+  outline: none;
+}
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {
+  clear: both;
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.text-over {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.toTop {
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  right: 22px;
+  bottom: 72px;
+  z-index: 9999;
+  display: none;
+}
+.motify {
+  display: none;
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  width: 220px;
+  padding: 0;
+  margin: 0 0 0 -110px;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5em;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.motify .motify-inner {
+  padding: 10px 10px;
+  text-align: center;
+  word-wrap: break-word;
+}
+.motify p {
+  margin: 0 0 5px;
+}
+.motify p:last-of-type {
+  margin-bottom: 0;
+}
+.del-confirm-box {
+  display: none;
+  width: 309px;
+  height: 139px;
+  background: url(../images/app/confirm-del-bg.png) 0 0 no-repeat;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -155px;
+  margin-top: -70px;
+  z-index: 2;
+}
+.del-confirm-box .del-confirm-text {
+  margin-top: 30px;
+  position: relative;
+  height: 40px;
+  line-height: 1.4;
+  padding-left: 50px;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+.del-confirm-box .del-confirm-text img {
+  float: left;
+  margin-top: 4px;
+  margin-right: 16px;
+}
+.del-confirm-box .del-confirm-text span {
+  display: block;
+}
+.del-confirm-box .del-confirm-text span.forver {
+  color: #999;
+}
+.del-confirm-box .del-confirm-btn {
+  margin: 15px auto 0;
+  text-align: center;
+}
+.del-confirm-box .del-confirm-btn span {
+  width: 60px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #fafafa;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+}
+.del-confirm-box .del-confirm-sure {
+  margin-right: 10px;
+  background: #f75b49;
+}
+.del-confirm-box .del-confirm-cancel {
+  background: #1a9af3;
+}
+@keyframes line-spin-fade-loader {
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.loader-wapper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -100px;
+  margin-top: -35px;
+  height: 70px;
+  width: 200px;
+  margin: 0 auto;
+  display: none;
+}
+.line-spin-fade-loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.line-spin-fade-loader > div:nth-child(1) {
+  top: 20px;
+  left: 0;
+  animation: line-spin-fade-loader 1.2s 0.12s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(2) {
+  top: 13.63636px;
+  left: 13.63636px;
+  transform: rotate(-45deg);
+  animation: line-spin-fade-loader 1.2s 0.24s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(3) {
+  top: 0;
+  left: 20px;
+  transform: rotate(90deg);
+  animation: line-spin-fade-loader 1.2s 0.36s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(4) {
+  top: -13.63636px;
+  left: 13.63636px;
+  transform: rotate(45deg);
+  animation: line-spin-fade-loader 1.2s 0.48s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(5) {
+  top: -20px;
+  left: 0;
+  animation: line-spin-fade-loader 1.2s 0.6s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(6) {
+  top: -13.63636px;
+  left: -13.63636px;
+  transform: rotate(-45deg);
+  animation: line-spin-fade-loader 1.2s 0.72s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(7) {
+  top: 0;
+  left: -20px;
+  transform: rotate(90deg);
+  animation: line-spin-fade-loader 1.2s 0.84s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(8) {
+  top: 13.63636px;
+  left: -13.63636px;
+  transform: rotate(45deg);
+  animation: line-spin-fade-loader 1.2s 0.96s infinite ease-in-out;
+}
+.line-spin-fade-loader > div {
+  background-color: #1a9af3;
+  width: 4px;
+  height: 35px;
+  border-radius: 2px;
+  margin: 2px;
+  animation-fill-mode: both;
+  position: absolute;
+  width: 5px;
+  height: 15px;
+}
+/*============================= my_tip =============================*/
+.my_tip {
+  z-index: 11001;
+  position: fixed;
+  top: 50%;
+  margin: -15px auto 0px;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+.my_tip div {
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px 4px;
+  margin: 0 auto;
+  display: inline-block;
+  border-radius: 2px;
+  max-width: 10rem;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.my_tip.tip_success div {
+  background-color: rgba(2, 176, 1, 0.8) !important;
+}
+.my_tip.tip_error div {
+  background-color: rgba(222, 6, 0, 0.8) !important;
+}
+/*点赞动画 弹*/
+.heartpop {
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: .32s;
+  -webkit-animation-fill-mode: both;
+}
+.heartpop {
+  -webkit-animation-name: hpop;
+}
+/**渐入的css动画**/
+.fadeAnim {
+  -webkit-animation-duration: 0.12s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+}
+.fadeAnim.shown {
+  -webkit-animation-name: fshow;
+}
+.fadeAnim.hidden {
+  -webkit-animation-name: fhide;
+}
+/*跳出动画*/
+@keyframes jshow {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+}
+@keyframes jhide {
+  48% {
+    -webkit-transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+}
+.popAnim {
+  -webkit-animation-duration: 0.32s;
+  -webkit-animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  -webkit-animation-fill-mode: forwards;
+}
+.popAnim.shown {
+  animation-name: jshow;
+  -webkit-animation-name: jshow;
+}
+.popAnim.hidden {
+  animation-name: jhide;
+  -webkit-animation-name: jhide;
+}
+/**下滑展开的css动画**/
+.slideDAnim {
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+}
+.slideDAnim.shown {
+  -webkit-animation-name: sdshow;
+}
+.slideDAnim.hidden {
+  -webkit-animation-name: sdhide;
+}
+/**上滑展开的css动画**/
+.slideUpAnim {
+  -webkit-animation-duration: 0.32s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+}
+.slideUpAnim.shown {
+  -webkit-animation-name: sushow;
+}
+.slideUpAnim.hidden {
+  -webkit-animation-name: suhide;
+}
+/**左滑展开的css动画**/
+.slideLeftAnim {
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+}
+.slideLeftAnim.shown {
+  -webkit-animation-name: slshow;
+}
+.slideLeftAnim.hidden {
+  -webkit-animation-name: slhide;
+}
+/**右滑展开的css动画**/
+.slideRightAnim {
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+}
+.slideRightAnim.shown {
+  -webkit-animation-name: srshow;
+}
+.slideRightAnim.hidden {
+  -webkit-animation-name: srhide;
+}
+/* 筛选条件下拉 2016-07-19 */
+.autocompleter {
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  max-height: 246px;
+  z-index: 100;
+  overflow-y: auto;
+}
+.autocompleter-list {
+  box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  box-sizing: border-box;
+}
+.autocompleter-item-selected {
+  background: #ffffff;
+}
+.autocompleter-item {
+  padding: 6px 12px;
+  color: #444444;
+  font-size: 12px;
+  cursor: pointer;
+}
+.autocompleter-item:hover {
+  background: #1a9af3;
+}
+.autocompleter-item strong {
+  background: #f9de8f;
+  text-shadow: 0 1px 0 #ffffff;
+}
+.autocompleter-item span {
+  color: #bbbbbb;
+}
+.autocompleter-hint {
+  color: #1a9af3;
+  text-align: left;
+  top: -56px;
+  font-weight: 400;
+  left: 0;
+  width: 100%;
+  padding: 12px 12px 12px 13px;
+  font-size: 18px;
+  display: none;
+}
+.autocompleter-hint span {
+  color: transparent;
+}
+.autocompleter-hint-show {
+  display: block;
+}
+.autocompleter-closed {
+  display: none;
+}
